@@ -1,0 +1,610 @@
+@charset 'utf-8';
+
+@font-face { font-family: 'GmarketSansLight'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+/* reset*/
+    
+* {
+    margin : 0px;
+    padding: 0px;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color : inherit;
+}
+
+body {
+    font-family:'GmarketSansLight', sans-serif;
+}
+
+/* hidden 은 안보이게 처리 하는 방법*/
+
+.hidden {
+    display : block;
+    width : 1px;
+    height : 1px;
+    position : absolute;
+    top : -9999px;
+    left : -9999px;
+    overflow : hidden;
+    z-index: -9999px;
+}
+
+/* #headBox */
+
+#headBox{
+    width : 100%;
+    height : 86px;
+    position : fixed;
+    top : 0px;
+    left : 0px;
+    background: rgba(0,0,0,0.6);
+    color : #fff;
+    z-index: 2000;
+}
+
+#headBox a {
+    color : inherit;
+    text-decoration: none;  /*글씨 밑줄 지우기*/
+}
+
+#headBox >.inner {
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    width : 1140px;
+    height : 100%;
+    margin : 0 auto;
+}
+
+#headBox > .inner > .menu {
+    display : flex;
+    align-items: center;
+} 
+
+#headBox > .inner > .menu > li:hover > a {
+    color : #fff;
+    text-decoration : underline;
+}
+
+#headBox > .inner > .menu > li + li{
+    margin-left: 60px;
+}
+
+#headBox > .inner > .menu > li > a {
+    color : rgba(255,255,255,0.6);
+}
+
+#headBox > .inner > .menu2 {
+    display : flex;
+    align-items: center;
+    font-size : 12px;
+}
+
+#headBox > .inner > .menu2 > li {
+    padding : 8px 12px;
+    border : 1px solid #fff;
+    border-radius: 3px;
+    color : #fff;
+    transition : all 500ms;
+}
+
+#headBox > .inner > .menu2 > li:hover {
+    color : #222;
+    background-color : #fff; 
+}
+
+#headBox > .inner > .menu2 > li + li {
+    margin-left : 10px;
+}
+
+
+/*topBanner*/
+
+#topBanner {
+    width : 100%;
+    height : 795px;
+    overflow: hidden;
+    background-color: midnightblue;
+    color : #fff;
+    position :relative;
+    /* overflow: scroll; */
+}
+
+#topBanner a {
+    text-decoration: none;
+    color : inherit;
+}
+
+#topBanner > .inner {
+    width : 500%;
+    height : 100%;
+    display: flex;
+}
+
+#topBanner > .inner > article {
+    width : 20%;
+    height : 100%;
+    text-align: center;
+    position : relative;
+    overflow: hidden;
+}
+
+#topBanner > .inner > article > video {
+    min-width: 100%;
+    height : 100%;
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    filter : brightness(0.8);
+}
+
+#topBanner > .inner > article > .text-area {
+    width : 100%;
+    position :absolute;
+    top : 50%;
+    transform : translateY(-50%);
+}
+
+#topBanner > .inner > article > .text-area > h2 {
+    font-size : 42px;
+    margin-top : 30px;
+}
+
+#topBanner > .inner > article > .text-area > a {
+    display: inline-block;
+    padding : 16px 32px;
+    border : 1px solid #fff;
+    border-radius: 60px;
+}
+
+#topBanner > .inner > article > .text-area > a:hover{
+    background-color: aquamarine;
+    border : 1px solid aquamarine;
+}
+
+#topBanner > .btn_box {
+    width : auto;
+    position : absolute;
+    bottom : 40px;
+    left : 50%;
+    transform : translate(-50%);
+    display: flex;
+}
+
+#topBanner > .btn_box > button {
+    display : block;
+    width : 40px;
+    height : 4px;
+    background-color: rgba(255,255,255,0.3);
+    border : none;
+    cursor: pointer;
+}
+
+#topBanner > .btn_box > button.on {
+    background-color: #fff;
+}
+
+#topBanner > .btn_box > button + button {
+    margin-left: 10px;
+}
+
+
+/* serviceBox */
+#serviceBox {
+    padding : 150px 0px;
+}
+
+#serviceBox > .inner {
+    width : 1200px;
+    margin : 0px auto;
+}
+
+#serviceBox > .inner > h1 {
+    text-align : center;
+    font-size : 40px;
+    margin-bottom: 20px;
+}
+
+#serviceBox > .inner > h1 + p {
+    text-align : center;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+#serviceBox > .inner > .service_list {
+    margin-top : 80px;
+    display : flex;
+    justify-content: space-between;
+}
+
+#serviceBox > .inner > .service_list > li {
+    height : 300px;
+    text-align: center;
+}
+/* 가로 정렬 방법 
+
+- float 속성
+- display 속성을 inline-block
+-
+
+*/
+#serviceBox > .inner > .service_list > li > a {
+    text-decoration: none;
+    color : #222;
+}
+
+#serviceBox > .inner > .service_list > li > a > .pic {
+    width : 90px;
+    height : 90px;
+    margin : 0px auto 30px;
+    background-size: 349px 311px;
+    background-image : url('../sp_svg_icon.png');
+}
+
+#serviceBox > .inner > .service_list > li:nth-child(1) > a > .pic {
+    background-position: -88px -120px;
+}
+#serviceBox > .inner > .service_list > li:nth-child(2) > a > .pic {
+    background-position: -255px -4px;
+}
+#serviceBox > .inner > .service_list > li:nth-child(3) > a > .pic {
+    background-position: -157px -4px;
+}
+#serviceBox > .inner > .service_list > li:nth-child(4) > a > .pic {
+    background-position: -255px -102px;
+}
+
+#serviceBox > .inner > .service_list > li > a > .contents {
+    
+}
+
+#serviceBox > .inner > .service_list > li > a > .contents > h2 {
+    font-size : 24px;
+    margin-bottom : 12px;
+}
+
+#serviceBox > .inner > .service_list > li > a > .contents > h2 + p {
+    font-size : 16px;
+    line-height: 1.6;
+}
+
+#ClovaBox {
+    padding :150px 0;
+    background-color: #f8fafc;
+}
+
+#ClovaBox > .inner {
+    width : 1200px;
+    margin : 0 auto;
+}
+
+#ClovaBox > .inner::after {
+    content : "";
+    display : block;
+    width : 0px;
+    height: 0px;
+    clear : both;
+}
+
+#ClovaBox > .inner > .title {
+    float : left;
+    width : 380px;
+    padding-top: 40px;
+}
+
+#ClovaBox > .inner > .title > h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+#ClovaBox > .inner > .title > h1 + p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+#ClovaBox > .inner > ul {
+    float : left;
+    width : calc(1200px - 380px);
+    display : flex;
+    justify-content: space-between;
+    padding : 0px;
+}
+
+#ClovaBox > .inner > ul > li {
+    width : 48%;
+    padding : 50px;
+    box-sizing: border-box;
+    background-color:  #fff;
+    border: 1px solid #eee;
+    border-radius :8px;
+}
+
+#ClovaBox > .inner > ul > li > a {
+    color : #222;
+    text-decoration: none;
+}
+
+#ClovaBox > .inner > ul > li > a > .pic {
+    width : 90px;
+    height: 90px;
+    margin-bottom: 40px;
+    background-size: 349px 311px;
+    background-image : url('../sp_svg_icon.png');
+}
+
+#ClovaBox > .inner > ul > li:nth-child(1) > a > .pic {
+    background-position: -4px -120px;
+}
+#ClovaBox > .inner > ul > li:nth-child(2) > a > .pic {
+    background-position: -4px -218px;
+}
+
+#ClovaBox > .inner > ul > li > a h3 {
+    font-size : 24px;
+    margin-bottom: 20px;
+}
+
+#ClovaBox > .inner > ul > li > a h3 + p {
+    font-size : 16px;
+    line-height: 1.8;
+}
+
+/*centerBanner*/
+#centerBanner {
+    display: table;
+    width : 100%;
+    height : 290px;
+    text-align: center;
+    background-image: url(../200309_blog_pc.png);
+    background-size : cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color : #fff;
+}
+
+#centerBanner > .inner {
+    display : table-cell;
+    vertical-align: middle;
+}
+
+#centerBanner > .inner > h1 {
+    font-size : 32px;
+    margin-bottom: 20px;
+}
+
+#centerBanner > .inner > p {
+    font-size:  18px;
+    margin-bottom: 20px;
+}
+
+#centerBanner > .inner > a {
+    display: inline-block;
+    text-decoration: none;
+    color : inherit;
+    padding: 14px 28px;
+    border : 1px solid #fff;
+    border-radius: 50px;
+    font-size : 14px;
+}
+
+#centerBanner > .inner > a:hover {
+    background : #fff;
+    color : limegreen;
+}
+
+/*newsBox*/
+
+#newsBox {
+    width : 100%;
+    height: auto;
+    padding : 150px 0px;
+}
+
+#newsBox > .inner {
+    width : 1200px;
+    margin : 0 auto;
+    padding : 0px 10px;
+    box-sizing: border-box;
+}
+
+#newsBox > .inner > h1 {
+    text-align : center;
+    font-size : 40px;
+    margin-bottom: 20px;
+}
+
+#newsBox > .inner > h1 + p {
+    text-align : center;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+#newsBox > .inner > ul {
+    margin-top : 60px;
+    display : flex;
+}
+
+#newsBox > .inner > ul > li {
+    width : 380px;
+    border : 1px solid #eee;
+    border-radius: 4px;
+}
+
+#newsBox > .inner > ul > li + li {
+    margin-left : 20px;
+}
+
+#newsBox > .inner > ul > li > a{
+    text-decoration: none;
+    color : inherit;
+}
+
+#newsBox > .inner > ul > li .pic {
+    width : 100%;
+    height : 210px;
+    background-color: :#ddd;
+}
+
+#newsBox > .inner > ul > li .pic + div {
+    width : 100%;
+    height: auto;
+    padding : 40px;
+    box-sizing: border-box;
+}
+
+#newsBox > .inner > ul > li .pic + div > h2 {
+    font-size : 18px;
+    margin-bottom: 20px;
+}
+
+#newsBox > .inner > ul > li .pic + div > h2 + p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/*lastBanner*/
+#lastBanner {
+    display: table;
+    width : 100%;
+    height : 290px;
+    text-align: center;
+    background-image: url(../200309_blog_pc.png);
+    background-size : cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color : #fff;
+}
+
+#lastBanner > .inner {
+    display : table-cell;
+    vertical-align: middle;
+}
+
+#lastBanner > .inner > h1 {
+    font-size : 32px;
+    margin-bottom: 20px;
+}
+
+#lastBanner > .inner > p {
+    font-size:  18px;
+    margin-bottom: 20px;
+}
+
+#lastBanner > .inner > a {
+    display: inline-block;
+    text-decoration: none;
+    color : inherit;
+    padding: 14px 28px;
+    border : 1px solid #fff;
+    border-radius: 50px;
+    font-size : 14px;
+}
+
+#lastBanner > .inner > a:hover {
+    background : #fff;
+    color : limegreen;
+}
+
+/*footBox*/
+
+#footBox {
+    background-color: #222;
+    color : #666;
+    padding : 60px 0px;
+}
+
+#footBox > .inner {
+    width : 1200px;
+    padding 0 10px;
+    box-sizing: border-box;
+    margin : 0px auto;
+}
+
+#footBox > .inner > .foot_top {
+    width : 100%;
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#footBox > .inner > .foot_top > .sns {
+    display : flex;
+}
+
+#footBox > .inner > .foot_top > .sns > li + li {
+    margin-left: 20px;
+}
+
+#footBox > .inner > .foot_bottom {
+    display : flex;
+    justify-content: space-between;
+}
+
+#footBox > .inner > .foot_bottom > .tel {
+    display: flex;
+}
+
+#footBox > .inner > .foot_bottom > .tel > p + p {
+    margin-left: 40px;
+    position : relative;
+}
+#footBox > .inner > .foot_bottom > .tel > p + p::before {
+    content: "";
+    width : 1px;
+    height: 100%;
+    display : block;
+    background-color: #666;
+    position: absolute;
+    top : 0px;
+    left : -20px;
+}
+
+#footBox > .inner > .foot_bottom > .inb {
+    display: flex;
+}
+
+#footBox > .inner > .foot_bottom > .inb > li + li {
+    margin-left : 40px;
+    position : relative;
+}
+
+#footBox > .inner > .foot_bottom > .inb > li + li::before {
+    content: "";
+    width : 1px;
+    height : 100%;
+    display : block;
+    background-color: #666;
+    position: absolute;
+    left : -20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
